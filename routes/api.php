@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['api']], function() {
+    // 新規登録
+    Route::post('/register', [RegisteredUserController::class, 'store']);
+    // ログイン
+    Route::post('/login', [AuthController::class, 'store']);
+    // ログアウト
+    Route::post('/logout', [AuthController::class, 'destroy']);
+    // トークンリフレッシュ
+    Route::get('/refresh', [AuthController::class, 'refresh']);
+    // ユーザー情報取得
+    Route::get('/user', [AuthController::class, 'index']);
 });
