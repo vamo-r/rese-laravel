@@ -12,4 +12,16 @@ class Shop extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function getAllShops()
+    {
+        $shops = $this->all();
+        return $shops;
+    }
+
+    public function getShopDetails($id)
+    {
+        $shop = $this->where('id', $id)->get();
+        return $shop;
+    }
 }
