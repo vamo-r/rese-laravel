@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ShopsController extends Controller
@@ -33,7 +32,7 @@ class ShopsController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Shop  $shop
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Shop $shop, $id)
     {
