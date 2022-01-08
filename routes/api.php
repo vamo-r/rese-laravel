@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ShopsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,8 @@ Route::group(['middleware' => ['api']], function() {
     Route::get('/refresh', [AuthController::class, 'refresh']);
     // ユーザー情報取得
     Route::get('/user', [AuthController::class, 'index']);
+    // 店舗一覧取得
+    Route::get('/shops', [ShopsController::class, 'index']);
+    // 店舗詳細取得
+    Route::get('/shops/{shop_id}', [ShopsController::class, 'show']);
 });
