@@ -13,6 +13,10 @@ class Shop extends Model
         'id',
     ];
 
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
+
     public function getAllShops()
     {
         $shops = $this->all();

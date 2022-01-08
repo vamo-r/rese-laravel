@@ -43,6 +43,11 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
