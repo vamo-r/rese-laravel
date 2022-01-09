@@ -27,13 +27,13 @@ class Shop extends Model
 
     public function getAllShops()
     {
-        $shops = $this->all();
+        $shops = $this->with('area:id,name', 'genre:id,name')->get();
         return $shops;
     }
 
     public function getShopDetails($id)
     {
-        $shop = $this->where('id', $id)->get();
+        $shop = $this->with('area:id,name', 'genre:id,name')->where('id', $id)->get();
         return $shop;
     }
 }
