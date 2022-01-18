@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\LikesController;
+use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\ShopsController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,10 @@ Route::group(['middleware' => ['api']], function() {
     Route::get('/like', [LikesController::class, 'index']);
     // お気に入り登録/削除
     Route::post('/like', [LikesController::class, 'store']);
+    // 予約一覧取得
+    Route::get('/reservation', [ReservationsController::class, 'index']);
+    // 予約登録
+    Route::post('/reservation', [ReservationsController::class, 'store']);
+    // 予約削除
+    Route::delete('/reservation', [ReservationsController::class, 'destroy']);
 });
