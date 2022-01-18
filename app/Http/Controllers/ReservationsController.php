@@ -9,6 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 class ReservationsController extends Controller
 {
     /**
+     * Create a new LikesController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\JsonResponse
