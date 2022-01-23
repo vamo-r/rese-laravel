@@ -28,7 +28,7 @@ class LikesController extends Controller
     {
         $likes_data = $like->getLikes();
 
-        return response()->json($likes_data, Response::HTTP_OK);
+        return response()->json(['likes_data' => $likes_data], Response::HTTP_OK);
     }
 
     /**
