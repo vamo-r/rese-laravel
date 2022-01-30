@@ -25,6 +25,11 @@ class Shop extends Model
         return $this->hasMany(Like::class);
     }
 
+    public function userslike() {
+        return $this->belongsToMany(User::class, 'likes')
+            ->as('likes');
+    }
+
     public function getAllShops()
     {
         $shops = $this->with('area:id,name', 'genre:id,name')->get();
