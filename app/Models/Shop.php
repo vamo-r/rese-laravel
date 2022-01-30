@@ -11,6 +11,7 @@ class Shop extends Model
 
     protected $guarded = [
         'id',
+        'image_url',
     ];
 
     public function area() {
