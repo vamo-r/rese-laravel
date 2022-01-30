@@ -44,8 +44,8 @@ class Reservation extends Model
         $this->save();
     }
 
-    public function deleteReservation($id)
+    public function deleteReservation($shop_id)
     {
-        $this->where('id', $id)->where('user_id', Auth::user()->id)->delete();
+        $this->where('shop_id', $shop_id)->where('user_id', Auth::user()->id)->delete();
     }
 }
