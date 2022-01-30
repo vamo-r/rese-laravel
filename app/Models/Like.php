@@ -19,14 +19,9 @@ class Like extends Model
         return $this->belongsTo(Shop::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function getLikes()
     {
-        $likes_data = $this->where('user_id', Auth::user()->id)->get();
+        $likes_data = User::find(Auth::user()->id)->likes()->with('area:id,name', 'genre:id,name')->get();
         return $likes_data;
     }
 
