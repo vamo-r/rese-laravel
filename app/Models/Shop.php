@@ -33,7 +33,7 @@ class Shop extends Model
 
     public function getAllShops()
     {
-        $shops = $this->with('area:id,name', 'genre:id,name')->get();
+        $shops = $this->with('area:id,name', 'genre:id,name')->orderBy('id', 'asc')->get();
         return $shops;
     }
 
