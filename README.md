@@ -2,7 +2,7 @@
 
 飲食店予約アプリのバックエンドリポジトリです。  
 Dockerを使用して構築した為、動作確認がしたい方はDockerをご使用ください。  
-[フロントエンドリポジトリ](https://github.com/vamo-r/rese-nuxt)
+フロントエンドリポジトリは[こちら](https://github.com/vamo-r/rese-nuxt)です。
 
 ## 構築環境
 * Nginx:1.21-alpine
@@ -31,16 +31,28 @@ git clone https://github.com/vamo-r/rese-laravel.git
 git clone git@github.com:vamo-r/rese-laravel.git
 ```
 ```bash
+cd rese-laravel
+```
+```bash
+cp .env.example .env
+```
+```bash
 docker network create rese-docker
 ```
 ```bash
 docker compose up --build
 ```
 ```bash
+docker compose run --rm api composer install
+```
+```bash
 docker compose run --rm api php artisan migrate
 ```
 ```bash
 docker compose run --rm api php artisan db:seed
+```
+```bash
+php artisan jwt:secret
 ```
 
 ## メモ
