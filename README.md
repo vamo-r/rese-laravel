@@ -1,7 +1,8 @@
 # Rese
-
 飲食店予約アプリのバックエンドリポジトリです。  
 Dockerを使用して構築した為、動作確認がしたい方はDockerをご使用ください。  
+このリポジトリはHerokuにデプロイしています。  
+  
 フロントエンドリポジトリは[こちら](https://github.com/vamo-r/rese-nuxt)です。
 
 ## 構築環境
@@ -24,7 +25,6 @@ Dockerを使用して構築した為、動作確認がしたい方はDockerを�
 * 予約削除
 
 ## 使い方
-
 ```bash
 git clone https://github.com/vamo-r/rese-laravel.git
 または
@@ -56,9 +56,7 @@ php artisan jwt:secret
 ```
 
 ## メモ
-
 随時更新・修正していきます。
 
 ## 開発者 & ライセンス
-
 * [vamo-r](https://twitter.com/vamo__r)
