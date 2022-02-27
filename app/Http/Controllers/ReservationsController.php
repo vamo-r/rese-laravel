@@ -63,8 +63,8 @@ class ReservationsController extends Controller
      */
     public function destroy(Request $request, Reservation $reservation)
     {
-        $shop_id = $request->shop_id;
-        $reservation->deleteReservation($shop_id);
+        $reservation_id = $request->id;
+        $reservation->deleteReservation($reservation_id);
 
         return response()->json('Reservation delete', Response::HTTP_OK);
     }
